@@ -1,4 +1,4 @@
-from typing import TypedDict
+from typing import TypedDict, NotRequired
 import copy
 from app.core.logger import logger
 
@@ -16,10 +16,10 @@ class ImportGraphState(TypedDict):
 
 
     # --- 切块相关 --- 【没用】
-    is_normal_split_enabled: bool
-    is_silicon_flow_api_enabled: bool
-    is_advanced_split_enabled: bool
-    is_vllm_enabled: bool
+    is_normal_split_enabled: NotRequired[bool]
+    is_silicon_flow_api_enabled: NotRequired[bool]
+    is_advanced_split_enabled: NotRequired[bool]
+    is_vllm_enabled: NotRequired[bool]
 
     # --- 路径相关 ---
     local_dir: str        # 当前工作目录或输出目录
