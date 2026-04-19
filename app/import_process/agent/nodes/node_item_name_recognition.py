@@ -158,7 +158,7 @@ def step_5_save_to_vector_db(file_title, item_name, dense_vector, sparse_vector)
         )
         # 创建集合
         milvus_client.create_collection(
-            collectin_name=milvus_config.item_name_collection,
+            collection_name=milvus_config.item_name_collection,
             schema=schema,
             index_params=index_params
         )

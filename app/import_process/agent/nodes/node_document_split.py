@@ -135,8 +135,8 @@ def merge_short_sections(final_sections, min_length):
         # 判定上一次是否短块需要合并
         is_current_short = len(pre_section.get('content')) < min_length
         # 是否为同一个parent_title
-        is_same_parent_tile = pre_section.get("parent_title") and (section.get('parent_title') == pre_section.get('parent_title'))
-        if is_current_short and is_same_parent_tile:
+        is_same_parent_title = pre_section.get("parent_title") and (section.get('parent_title') == pre_section.get('parent_title'))
+        if is_current_short and is_same_parent_title:
             # 需要合并 这里其实需要判断合并后是否会超过最大长度
             current_content = section.get('content')
             pre_section['content'] += '\n\n' + current_content
@@ -153,7 +153,7 @@ def step_3_refine_chunks(sections, max_length: int = DEFAULT_MAX_CONTENT_LENGTH,
     """
     做md内容的精细切割
     1.超过了DEFAULT_MAX_CONTENT_LENGTH 要做切割,(parent_title|part)
-    2.小于MIN_CONTENT_LENGTH ,要合并结果 (同一个parent_tile)
+    2.小于MIN_CONTENT_LENGTH ,要合并结果 (同一个parent_title)
     :param sections: 粗切的块
     :param max_length: 最大长度
     :param min_length: 最小长度
@@ -166,10 +166,10 @@ def step_3_refine_chunks(sections, max_length: int = DEFAULT_MAX_CONTENT_LENGTH,
         final_sections.extend(sub_section)
     # 小于的合并
     final_sections = merge_short_sections(final_sections, min_length)
-    # 补全属性part 和parent_tile (没有走split_long_section中切块逻辑的)
+    # 补全属性part 和parent_title (没有走split_long_section中切块逻辑的)
     for section in final_sections:
         section['part'] = section.get('part') or 1
-        section['parent_tile'] = section.get('parent_tile') or section.get('title')
+        section['parent_title'] = section.get('parent_title') or section.get('title')
 
     return final_sections
 

@@ -112,7 +112,6 @@ def save_chat_message(
         text: str,
         rewritten_query: str = "",
         item_names: List[str] = None,
-        image_urls: List[str] = None,
         message_id: str = None
 ) -> str:
     """
@@ -137,7 +136,6 @@ def save_chat_message(
         "text": text,  # 消息内容
         "rewritten_query": rewritten_query or "",  # 重写查询，空值处理为空字符串
         "item_names": item_names,  # 关联商品名称列表
-        "image_urls": image_urls,  # 关联图片URL列表
         "ts": ts  # 时间戳，排序和时间筛选维度
     }
 

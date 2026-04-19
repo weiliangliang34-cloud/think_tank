@@ -1,6 +1,0 @@
-2026-04-15 23:40:39.754 | ERROR    | node_pdf_to_md.py   :step_1_validate_paths:43   - [step_1_validate_paths检查发现local_dir不存在，主动创建对应的文件夹！！！
-2026-04-15 23:40:40.097 | ERROR    | node_pdf_to_md.py   :step_2_upload_and_poll:74   - MinerU请求url:https://mineru.net/api/v4/extract/task失败,异常:{'code': -10002, 'msg': 'field "url" is not set'}
-2026-04-15 23:40:40.098 | ERROR    | node_pdf_to_md.py   :node_pdf_to_md :213  - ===[node_pdf_to_md]异常,报错:MinerU请求url:https://mineru.net/api/v4/extract/task失败,异常:{'code': -10002, 'msg': 'field "url" is not set'}
-2026-04-15 23:42:02.287 | ERROR    | node_pdf_to_md.py   :step_2_upload_and_poll:74   - MinerU请求url:https://mineru.net/api/v4/extract/task/batch失败,异常:{'code': -10002, 'msg': 'field "files[0].url" is not set'}
-2026-04-15 23:42:02.288 | ERROR    | node_pdf_to_md.py   :node_pdf_to_md :213  - ===[node_pdf_to_md]异常,报错:MinerU请求url:https://mineru.net/api/v4/extract/task/batch失败,异常:{'code': -10002, 'msg': 'field "files[0].url" is not set'}
-2026-04-15 23:42:43.384 | ERROR    | node_pdf_to_md.py   :node_pdf_to_md :213  - ===[node_pdf_to_md]异常,报错:list indices must be integers or slices, not str

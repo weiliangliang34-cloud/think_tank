@@ -1,6 +1,6 @@
+import sys
 
 from pymilvus import DataType
-
 from app.clients.milvus_utils import get_milvus_client
 from app.conf.milvus_config import milvus_config
 from app.core.logger import logger
@@ -111,7 +111,6 @@ def node_import_milvus(state: ImportGraphState) -> ImportGraphState:
         step_3_delete_old_data(milvus_client, chunks[0]['item_name'])
         # 4. 插入chunks的数据即可
         with_id_chunks = step_4_insert_collections(milvus_client,chunks)
-
         state['chunks'] = with_id_chunks
     except Exception as e:
         # 处理异常
